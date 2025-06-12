@@ -1,6 +1,8 @@
 # FbsDumper
 A tool to recover flatbuffers definitions from game assemblies
 
+- TODO: default values
+
 ## Originally made for Blue Archive, should theoretically work with other games but is untested.
 
 # Usage 
