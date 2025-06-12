@@ -13,6 +13,7 @@ public class MainApp
     private static string? CustomNameSpace = "FlatData"; // can also be String.Empty, "", or null to not specify namespace
     private static string FlatBaseType = "FlatBuffers.IFlatbufferObject";
     private static string DummyAssemblyDir = "DummyDll";
+    private static string OutputFileName = "BlueArchive.fbs";
     public static List<TypeDefinition> flatEnumsToAdd = new List<TypeDefinition>(); // for GetAllFlatBufferTypes -> getting enums part
 
     public static void Main(string[] args)
@@ -48,7 +49,7 @@ public class MainApp
             schema.flatEnums.Add(fEnum);
         }
 
-        File.WriteAllText("table.fbs", SchemaToString(schema));
+        File.WriteAllText(OutputFileName, SchemaToString(schema));
     }
 
     private static string SchemaToString(FlatSchema schema)
