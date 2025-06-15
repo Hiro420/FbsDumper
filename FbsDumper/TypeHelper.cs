@@ -17,7 +17,12 @@ internal class TypeHelper
         List<TypeDefinition> ret = module.GetTypes().Where(t =>
             t.HasInterfaces &&
             t.Interfaces.Any(i => i.InterfaceType.FullName == baseTypeName)
-        ).ToList();
+		).ToList();
+
+        if (!String.IsNullOrEmpty(MainApp.NameSpace2LookFor))
+        {
+            ret = ret.Where(t => t.Namespace == MainApp.NameSpace2LookFor).ToList();
+        }
 
         // todo: check nested types
 
