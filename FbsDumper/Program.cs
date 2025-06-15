@@ -11,7 +11,7 @@ public class MainApp
     public static bool ForceDump = true;
     public static bool ForceSnakeCase = false;
     private static string? CustomNameSpace = "FlatData"; // can also be String.Empty, "", or null to not specify namespace
-	public static string? NameSpace2LookFor = "FlatData"; // can also be MX.Data.Excel or null to specify different namespaces
+	public static string? NameSpace2LookFor = null; // can also be MX.Data.Excel or FlatData to specify different namespaces
 	private static string FlatBaseType = "FlatBuffers.IFlatbufferObject";
     private static string DummyAssemblyDir = "DummyDll";
     private static string OutputFileName = "BlueArchive.fbs";

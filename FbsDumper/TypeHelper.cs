@@ -24,9 +24,15 @@ internal class TypeHelper
             ret = ret.Where(t => t.Namespace == MainApp.NameSpace2LookFor).ToList();
         }
 
-        // todo: check nested types
+        // Dedupe
+		ret = ret
+	        .GroupBy(t => t.Name)
+	        .Select(g => g.First())
+	        .ToList();
 
-        return ret;
+		// todo: check nested types
+
+		return ret;
     }
 
     public static FlatTable? Type2Table(TypeDefinition targetType)
